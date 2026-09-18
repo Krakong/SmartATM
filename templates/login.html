@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="atm-card mx-auto">
+<h2 class="mb-4">ATM Login</h2>
+<form method="post">{% csrf_token %}
+{{ form.as_p }}
+<button class="btn btn-primary w-100">Login</button>
+</form>
+<p class="text-muted mt-3 mb-0">Demo banking application — do not use real financial credentials.</p>
+</div>
+{% endblock %}
