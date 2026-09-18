@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+<div><h2>Welcome, {{ user.first_name|default:user.username }}</h2><p class="text-muted mb-0">Account: {{ account.account_number }}</p></div>
+</div>
+<div class="balance-card mb-4"><small>Available Balance</small><h1>₹{{ account.balance }}</h1></div>
+<div class="row g-3">
+{% for url,label in "deposit,Cash Deposit;withdraw,Cash Withdrawal;transfer,Fund Transfer;transactions,Mini Statement;change_pin,Change PIN"|make_list %}{% endfor %}
+<div class="col-md-4"><a class="action-card" href="{% url 'deposit' %}">Cash Deposit</a></div>
+<div class="col-md-4"><a class="action-card" href="{% url 'withdraw' %}">Cash Withdrawal</a></div>
+<div class="col-md-4"><a class="action-card" href="{% url 'transfer' %}">Fund Transfer</a></div>
+<div class="col-md-4"><a class="action-card" href="{% url 'transactions' %}">Transaction History</a></div>
+<div class="col-md-4"><a class="action-card" href="{% url 'change_pin' %}">Change PIN</a></div>
+</div>
+{% endblock %}
