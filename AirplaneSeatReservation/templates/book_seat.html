@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<section class='formcard'><small>SEAT {{seat.seat_number}}</small><h1>Confirm reservation</h1><p>{{seat.flight.origin}} → {{seat.flight.destination}}</p><form method='post'>{% csrf_token %}<label>Passenger name<input name='passenger_name' required></label><button class='btn'>Confirm Booking</button></form></section>{% endblock %}
