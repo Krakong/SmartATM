@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="atm-card mx-auto">
+<h2>{{ title }}</h2>
+<form method="post" class="mt-4">{% csrf_token %}{{ form.as_p }}<button class="btn btn-primary w-100">{{ button }}</button></form>
+<a class="btn btn-link w-100 mt-2" href="{% url 'dashboard' %}">Back to Dashboard</a>
+</div>
+{% endblock %}
